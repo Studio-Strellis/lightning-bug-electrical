@@ -661,8 +661,109 @@
     .footer-copy { font-size: 13px; color: var(--muted); }
     .footer-lic { font-size: 13px; color: var(--muted); }
 
+    /* ── REVIEWS ── */
+    #reviews { background: var(--dark); }
+
+    .reviews-carousel {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .reviews-track-wrap {
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .reviews-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.4s ease;
+    }
+
+    .review-card {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      width: calc(33.333% - 16px);
+      min-width: calc(33.333% - 16px);
+      flex-shrink: 0;
+      box-sizing: border-box;
+      overflow: hidden;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .review-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #4285f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .review-name {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--white);
+    }
+
+    .review-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .review-stars {
+      color: var(--volt);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .review-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+      font-family: 'Barlow', sans-serif;
+    }
+
+    .reviews-prev, .reviews-next {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      color: var(--white);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .reviews-prev:hover, .reviews-next:hover { background: var(--dark-3); }
+
     /* ── MOBILE ── */
     @media (max-width: 768px) {
+      .review-card { min-width: 85%; }
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       .hamburger { display: flex; margin-right: 16px; }
@@ -700,6 +801,7 @@
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#why">Why Us</a></li>
+      <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="tel:3235550294" class="nav-cta">
         (323) 555-0294
@@ -714,6 +816,7 @@
   <div class="mobile-drawer" id="mobileDrawer">
     <a href="#services">Services</a>
     <a href="#why">Why Us</a>
+    <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
     <a href="tel:3235550294" class="drawer-cta">Call (323) 555-0294</a>
   </div>
@@ -967,6 +1070,102 @@
     </div>
   </section>
 
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom:48px;">
+        <span class="section-label">Reviews</span>
+        <h2 class="section-title">What Customers Are Saying</h2>
+        <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-top:12px;">
+          <svg width="100" height="20" viewBox="0 0 100 20"><polygon points="10,1 12.9,7.6 20,8.6 15,13.4 16.2,20 10,16.9 3.8,20 5,13.4 0,8.6 7.1,7.6" fill="#d4f70e"/><polygon points="30,1 32.9,7.6 40,8.6 35,13.4 36.2,20 30,16.9 23.8,20 25,13.4 20,8.6 27.1,7.6" fill="#d4f70e"/><polygon points="50,1 52.9,7.6 60,8.6 55,13.4 56.2,20 50,16.9 43.8,20 45,13.4 40,8.6 47.1,7.6" fill="#d4f70e"/><polygon points="70,1 72.9,7.6 80,8.6 75,13.4 76.2,20 70,16.9 63.8,20 65,13.4 60,8.6 67.1,7.6" fill="#d4f70e"/><polygon points="90,1 92.9,7.6 100,8.6 95,13.4 96.2,20 90,16.9 83.8,20 85,13.4 80,8.6 87.1,7.6" fill="#d4f70e"/></svg>
+          <span style="color:var(--white); font-size:15px; font-family:'Barlow',sans-serif;">4.9 · 83 Google Reviews</span>
+        </div>
+      </div>
+
+      <div class="reviews-carousel">
+        <button class="reviews-prev" id="reviewsPrev">‹</button>
+        <div class="reviews-track-wrap">
+          <div class="reviews-track" id="reviewsTrack">
+
+            <div class="review-card">
+              <div class="review-header">
+                <div class="review-avatar" style="background:#4285f4;">T</div>
+                <div>
+                  <div class="review-name">Tom K.</div>
+                  <div class="review-meta">1 week ago · <img src="https://www.google.com/favicon.ico" width="12" height="12" style="vertical-align:middle;"> Google</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Had a circuit breaker tripping constantly in my kitchen. Called Lightning Bug and they came out same day. Diagnosed the problem in 20 minutes and had it fixed within the hour. Solid work, fair price."</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <div class="review-avatar" style="background:#34a853;">L</div>
+                <div>
+                  <div class="review-name">Leila M.</div>
+                  <div class="review-meta">3 weeks ago · <img src="https://www.google.com/favicon.ico" width="12" height="12" style="vertical-align:middle;"> Google</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Needed a full panel upgrade in my 1950s craftsman. They walked me through every step, pulled the permit, passed inspection first try. Professional from start to finish. I'd recommend them to anyone."</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <div class="review-avatar" style="background:#ea4335;">D</div>
+                <div>
+                  <div class="review-name">Danny R.</div>
+                  <div class="review-meta">1 month ago · <img src="https://www.google.com/favicon.ico" width="12" height="12" style="vertical-align:middle;"> Google</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Outlets in my living room stopped working and I had no idea why. Lightning Bug found a wiring issue that two other electricians had missed. Honest, thorough, and reasonably priced. These guys know their stuff."</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <div class="review-avatar" style="background:#fbbc05;">C</div>
+                <div>
+                  <div class="review-name">Carmen V.</div>
+                  <div class="review-meta">2 months ago · <img src="https://www.google.com/favicon.ico" width="12" height="12" style="vertical-align:middle;"> Google</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"They installed recessed lighting throughout my whole house and it looks incredible. On time every day, kept everything clean, and finished ahead of schedule. Will be calling them for every electrical job going forward."</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <div class="review-avatar" style="background:#4285f4;">M</div>
+                <div>
+                  <div class="review-name">Marcus H.</div>
+                  <div class="review-meta">3 months ago · <img src="https://www.google.com/favicon.ico" width="12" height="12" style="vertical-align:middle;"> Google</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"EV charger installation in my garage. They handled the permit, the wiring, everything. Showed up on time, finished in one day, explained how to use it. Could not have asked for a smoother experience."</p>
+            </div>
+
+            <div class="review-card">
+              <div class="review-header">
+                <div class="review-avatar" style="background:#34a853;">P</div>
+                <div>
+                  <div class="review-name">Priya S.</div>
+                  <div class="review-meta">5 months ago · <img src="https://www.google.com/favicon.ico" width="12" height="12" style="vertical-align:middle;"> Google</div>
+                </div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I've been in my Silver Lake bungalow for 10 years and always nervous about the old wiring. Lightning Bug did a full safety inspection and gave me a clear, honest report. No upselling, just straight answers. Finally feel safe."</p>
+            </div>
+
+          </div>
+        </div>
+        <button class="reviews-next" id="reviewsNext">›</button>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA BANNER -->
   <div class="cta-banner">
     <h2>Ready to Get Started?</h2>
@@ -1038,6 +1237,43 @@
         hamburger.classList.remove('open');
         mobileDrawer.classList.remove('open');
       });
+    });
+
+    // Reviews carousel — infinite loop
+    const track = document.getElementById('reviewsTrack');
+    const origCards = Array.from(track.querySelectorAll('.review-card'));
+    const TOTAL = origCards.length;
+
+    origCards.forEach(c => track.appendChild(c.cloneNode(true)));
+
+    let reviewIndex = 0;
+    let isTransitioning = false;
+
+    function cardWidth() {
+      return origCards[0].offsetWidth + 24;
+    }
+
+    function goTo(idx, animate) {
+      track.style.transition = animate ? 'transform 0.4s ease' : 'none';
+      track.style.transform = `translateX(-${idx * cardWidth()}px)`;
+      reviewIndex = idx;
+    }
+
+    track.addEventListener('transitionend', () => {
+      if (reviewIndex >= TOTAL) goTo(reviewIndex - TOTAL, false);
+      else if (reviewIndex < 0) goTo(reviewIndex + TOTAL, false);
+      isTransitioning = false;
+    });
+
+    document.getElementById('reviewsPrev').addEventListener('click', () => {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      goTo(reviewIndex - 1, true);
+    });
+    document.getElementById('reviewsNext').addEventListener('click', () => {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      goTo(reviewIndex + 1, true);
     });
   </script>
 
